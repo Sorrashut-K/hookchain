@@ -22,11 +22,10 @@ jobs:
         dotnet-version: '7.x' # ระบุเวอร์ชันที่ต้องการ
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./HookChain/HookChain_msg.sln
 
     - name: Build solution
-      run: dotnet build --configuration Release
+      run: dotnet build ./HookChain/HookChain_msg.sln --configuration Release
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
-              
+      run: dotnet test ./HookChain/HookChain_msg.sln --no-build --verbosity normal
